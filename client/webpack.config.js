@@ -19,24 +19,28 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
-        title: 'Text Editor'
+        template: "./index.html",
+        title: "Webpack Plugin",
       }),
       new InjectManifest({
-        swSrc: './src/sw.js',
-        swDest: 'service-worker.js',
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
-        name: 'Text Editor',
-        short_name: 'Text Editor',
-        description: 'My awesome Text Editor!',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        fingerprints: false,
+        inject: true,
+        name: "Text Editor",
+        short_name: "J.A.T.E",
+        description: "This is an offline text editor",
+        background_color: "#cfcfcf",
+        theme_color: "#cfcfcf",
+        start_url: "/",
+        publicPath: "/",
         icons: [
           {
-            src: path.resolve('./src/images/logo.png'),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('images', 'icons'),
+            destination: path.join("assets", "icons"),
           },
         ],
       }),
