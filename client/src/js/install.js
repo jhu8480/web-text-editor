@@ -10,7 +10,9 @@ const promptEvent = window.deferredPrompt;
 if (!promptEvent) {
 return;
 }
+
 promptEvent.prompt();
+
 window.deferredPrompt = null;
 
 butInstall.setAttribute('disabled', true);
